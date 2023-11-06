@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/lista"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Post {{post.id}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <h2>{{post.title}}</h2>
+    <ion-item-divider>
+      <p>{{post.body}}</p>
+    </ion-item-divider>
+  </div>
+</ion-content>

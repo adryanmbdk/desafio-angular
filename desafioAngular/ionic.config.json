@@ -1,7 +1,0 @@
-{
-  "name": "desafioAngular",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular-standalone"
-}
