@@ -1,16 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Lista de Posts</ion-title>
+    <ion-title>Posts - Dreamlabs</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list *ngFor="let post of posts">
-    <ion-item [routerLink]="['/item/', post.id]" detail>
-      <ion-label>
-      <h1>{{post.title}}</h1>
-      <p>{{post.body}}</p>
-    </ion-label>
-    </ion-item>
-  </ion-list>
+  <div class="container">
+    <div class="search-section">
+      <form [formGroup]="formSearch" (ngSubmit)="pesquisar()" class=" ion-padding">
+        <div class="form-input">
+           <ion-input slot="start" label="Pesquisar por nome" label-placement="floating" fill="outline" clearInput type="text" formControlName="title" name="title"></ion-input> 
+           <ion-button slot="end" [disabled]="!formSearch.valid" item-right type="submit" shape="round" expand="block"><ion-icon slot="icon-only" name="search"></ion-icon></ion-button>
+        </div>
+      </form>
+    </div>
+    <div class="list-section">
+      <ion-list [inset]="true" *ngFor="let post of posts | paginate: { itemsPerPage: 5, currentPage: p }">
+        <ion-item [routerLink]="['/item/', post.id]" detail>
+          <ion-label>
+            <ion-text class="title">{{post.title}}</ion-text><br />
+            <p class="ion-text-wrap body">{{post.body}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+    <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+  </div>
 </ion-content>

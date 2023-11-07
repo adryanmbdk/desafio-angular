@@ -1,0 +1,45 @@
+.container {
+
+    .form-input{
+        display: flex;
+        ion-input{
+            --highlight-color-focused:rgb(0, 174, 255);
+            --highlight-color-valid: rgb(0, 174, 255);
+        }
+        ion-button{
+            --background: rgb(0, 174, 255);
+        }
+    }
+
+  .title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: rgb(0, 174, 255);
+  }
+
+  .body {
+    font-size: 1.1rem;
+    margin-right: 2rem;
+  }
+
+}
+
+.my-pagination ::ng-deep .ngx-pagination {
+    margin-left: -40px;
+    text-align: center;
+  a {
+    color: rgb(0, 174, 255);
+  }
+
+  a:hover{
+    background: none;
+    color: white;
+    font-style: italic;
+  }
+
+  .disabled{
+    color: #8f8f8f;
+  }
+
+}
+

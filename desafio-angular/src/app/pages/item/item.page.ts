@@ -14,10 +14,10 @@ export class ItemPage implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private postService: PostService) {
     this.id = parseInt(this.activatedRoute.snapshot.params['id']);
     this.post = new Post();
+    this.RecuperarPost();
    }
 
   ngOnInit() {
-    this.RecuperarPost();
   }
 
   async RecuperarPost(){
